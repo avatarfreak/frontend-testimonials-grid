@@ -9,8 +9,13 @@
   --clr-neutral-100: hsl(0, 0%, 81%);
   --clr-neutral-110: hsl(210, 46%, 95%);
 
-  --fs-weight-bold: 500;
-  --fs-weight-semi-bold: 600;
+  --fs-size-xs: 0.6875rem;
+  --fs-size-sm: 0.8125rem;
+  --fs-size-md: 1.125rem;
+  --fs-size-lg: 1.25rem;
+
+  --fw-weight-bold: 500;
+  --fw-weight-semi-bold: 600;
 }
 
 *,
@@ -22,10 +27,16 @@
 }
 
 body {
-  height: 100%;
-  margin: 0 auto;
+  min-height: 100vh;
   font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 13px;
+  font-size: var(--fs-size-sm);
+  color: var(--clr-primary-100);
+  background: var(--clr-neutral-110);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+a {
+  text-decoration: none;
 }
 
 img {
@@ -38,10 +49,101 @@ cite {
   display: block;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  place-content: center;
+  max-width: 1920px;
+}
+
+.violet {
+  background-color: var(--clr-primary-90);
+}
+
+.grayish-blue {
+  background: var(--clr-primary-110);
+}
+
+.wheatish {
+  background: var(--clr-primary-100);
+}
+.blackish-blue {
+  background: var(--clr-primary-120);
+}
+
+figure {
+  border-radius: 5px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+figure .testimonial__img img {
+  --img-size: 38px;
+  height: var(--img-size);
+  width: var(--img-size);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+figure .testimonial__author {
+  font-size: var(--fs-size-sm);
+  font-weight: var(--fw-weight-semi-bold);
+}
+
+figure .testimonial__graduate {
+  font-size: var(--fs-size-xs);
+  font-weight: var(--fw-weight-semi-bold);
+  opacity: 50%;
+}
+
+figure .testimonial__statement {
+  font-size: var(--fs-size-md);
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 375px) {
+  figure .testimonial__statement {
+    font-size: var(--fs-size-lg);
+  }
+}
+.testimonial__review {
+  font-weight: var(--fw-weight-bold);
+  opacity: 70%;
+  margin-bottom: 1.5rem;
+}
+
+figure:first-child {
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 1.5rem;
+}
+
+figure:first-child img {
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+}
+
+figure:nth-child(3) {
+  color: var(--clr-primary-110);
+}
+
+figure:nth-child(4) img {
+  border: 2px solid hsla(263, 55%, 52%, 0.8);
+}
+
+figure:last-child {
+  color: var(--clr-primary-110);
+}
+
+.footer {
+  color: var(--clr-primary-110);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--clr-primary-90);
 }
