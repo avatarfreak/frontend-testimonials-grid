@@ -139,6 +139,30 @@ figure:last-child {
 .footer {
   color: var(--clr-primary-110);
 }
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 0;
+    display: grid;
+    place-content: center;
+  }
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+  }
+  figure {
+    padding: 2rem;
+  }
+  figure:first-child {
+    grid-column: span 2;
+  }
+  figure:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  figure:last-child {
+    grid-column: span 3;
+  }
+}
 
 .attribution {
   font-size: 11px;
